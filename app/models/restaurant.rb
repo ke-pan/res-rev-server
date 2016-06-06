@@ -1,6 +1,15 @@
 class Restaurant < ApplicationRecord
   serialize :open_at, ::Tod::TimeOfDay
+  has_attached_file :picture
+
   has_many :rates
+
+  validates_attachment :picture, presence: true,
+    content_type: { content_type: ["image/jpeg", "image/png"] },
+    size: { in: 0..100.kilobytes}
+
+  
+
 end
 
 # == Schema Information
