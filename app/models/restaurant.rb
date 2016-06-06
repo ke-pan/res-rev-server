@@ -1,4 +1,5 @@
 class Restaurant < ApplicationRecord
+  serialize :open_at, ::Tod::TimeOfDay
   has_many :rates
 end
 
