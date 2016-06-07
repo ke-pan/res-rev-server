@@ -4,8 +4,8 @@ FactoryGirl.define do
     location 'Rose Road'
     description 'Cool and tasty'
     category 'Italian'
-    open_at ::Tod::TimeOfDay.new(11)
-    close_at ::Tod::TimeOfDay.new(22)
+    open_at "11:00"
+    close_at "12:00"
     picture File.new("#{Rails.root}/public/restaurant1.jpg")
     score 4.3
   end

@@ -1,3 +1,3 @@
 class RateSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :score, :comment
 end

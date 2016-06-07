@@ -6,6 +6,6 @@ class CreateRates < ActiveRecord::Migration[5.0]
       t.text :comment
       t.timestamps
     end
-    add_foreign_key :rates, :restaurants, dependent: :delete
+    add_foreign_key :rates, :restaurants, on_delete: :cascade
   end
 end

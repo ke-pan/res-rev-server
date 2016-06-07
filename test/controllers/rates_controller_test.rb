@@ -1,7 +1,13 @@
 require 'test_helper'
 
 class RatesControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @restaurant = create :restaurant
+    @rate = create :rate, restaurant: @restaurant
+  end
+
+  test 'index' do
+    get restaurant_rates_path(@restaurant)
+    assert_response :success
+  end
 end
