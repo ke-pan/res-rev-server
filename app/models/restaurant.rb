@@ -1,6 +1,4 @@
 class Restaurant < ApplicationRecord
-  serialize :open_at, ::Tod::TimeOfDay
-  serialize :close_at, ::Tod::TimeOfDay
   has_attached_file :picture
 
   has_many :rates

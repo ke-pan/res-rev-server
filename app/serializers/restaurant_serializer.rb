@@ -13,4 +13,12 @@ class RestaurantSerializer < ActiveModel::Serializer
   def pic_url
     object.picture.url
   end
+
+  def open_at
+    object.open_at.strftime("%I:%M %P")
+  end
+
+  def close_at
+    object.close_at.strftime("%I:%M %P")
+  end
 end
