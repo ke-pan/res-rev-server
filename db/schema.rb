@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610095535) do
+ActiveRecord::Schema.define(version: 20160610104306) do
 
   create_table "rates", force: :cascade do |t|
     t.integer  "score"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160610095535) do
     t.datetime "picture_updated_at"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "rates_count"
   end
 
   create_table "users", force: :cascade do |t|

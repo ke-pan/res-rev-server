@@ -1,5 +1,5 @@
 class Rate < ApplicationRecord
-  belongs_to :restaurant
+  belongs_to :restaurant, counter_cache: true
   belongs_to :user
 end
 

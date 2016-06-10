@@ -6,7 +6,7 @@ FactoryGirl.define do
     category 'Italian'
     open_at "11:00"
     close_at "12:00"
-    picture File.new("#{Rails.root}/public/restaurant1.jpg")
+    picture File.new("#{Rails.root}/public/restaurant_images/restaurant1.jpg")
     score 4.3
   end
 end
