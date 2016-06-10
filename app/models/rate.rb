@@ -1,5 +1,6 @@
 class Rate < ApplicationRecord
   belongs_to :restaurant
+  belongs_to :user
 end
 
 # == Schema Information
@@ -12,4 +13,5 @@ end
 #  comment       :text
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  user_id       :integer
 #
