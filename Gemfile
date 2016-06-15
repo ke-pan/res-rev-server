@@ -22,6 +22,7 @@ gem 'turbolinks', '~> 5.x'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'paperclip', '~> 5.0.0.beta1'
 gem 'bcrypt'
+gem 'doorkeeper'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
