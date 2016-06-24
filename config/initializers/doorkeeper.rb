@@ -10,6 +10,11 @@ Doorkeeper.configure do
     User.find(doorkeeper_token[:resource_owner_id]) || error!
   end
 
+  resource_owner_from_credentials do |_routes|
+    u = User.find_by_name(params[:username])
+    u.try(:authenticate, params[:password])
+  end
+
   # If you want to restrict access to the web interface for adding oauth authorized applications, you need to declare the block below.
   # admin_authenticator do
   #   # Put your admin authentication logic here.
@@ -105,3 +110,5 @@ Doorkeeper.configure do
   # WWW-Authenticate Realm (default "Doorkeeper").
   # realm "Doorkeeper"
 end
+
+Doorkeeper.configuration.token_grant_types << 'password'
