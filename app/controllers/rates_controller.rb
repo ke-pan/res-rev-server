@@ -2,8 +2,8 @@ class RatesController < ApplicationController
   before_action :find_restaurant
 
   def index
-    @rates = @restaurant.rates
-    render json: @rates
+    @rates = @restaurant.rates.includes(:user)
+    render json: @rates, include: :user
   end
 
   private

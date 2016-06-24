@@ -13,7 +13,7 @@ end
 
 50.times do |i|
   User.create(
-    name: Faker::Internet.user_name + i.to_s,
+    name: Faker::Name.first_name + i.to_s,
     password: '1234qwer',
     password_confirmation: '1234qwer'
   )
