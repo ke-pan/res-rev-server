@@ -12,8 +12,10 @@
 end
 
 50.times do |i|
+  name = Faker::Name.first_name + i.to_s
   User.create(
-    name: Faker::Name.first_name + i.to_s,
+    name: name,
+    avatar: Faker::Avatar.image(name, '65x65'),
     password: '1234qwer',
     password_confirmation: '1234qwer'
   )
