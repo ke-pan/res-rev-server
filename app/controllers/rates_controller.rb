@@ -1,5 +1,6 @@
 class RatesController < ApplicationController
   before_action :find_restaurant
+  before_action :doorkeeper_authorize!, only: [:create]
 
   def index
     @rates = @restaurant.rates.includes(:user)

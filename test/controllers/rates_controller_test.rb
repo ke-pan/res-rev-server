@@ -3,7 +3,6 @@ require 'test_helper'
 class RatesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @restaurant = create :restaurant
-    @rate = create :rate, restaurant: @restaurant
   end
 
   test 'index' do
@@ -12,6 +11,8 @@ class RatesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'create' do
+    user = create :user
+    token = Doorkeeper::AccessToken.create(resource_owner_id: user.id)
     assert_difference('Rate.count', 1) do
       post restaurant_rates_path(@restaurant),
         params: {
@@ -21,8 +22,10 @@ class RatesControllerTest < ActionDispatch::IntegrationTest
               score: 4,
               comment: 'good'
             }
-          }
+          },
+          :access_token => token.token
         }
     end
+    assert_response 201
   end
 end
