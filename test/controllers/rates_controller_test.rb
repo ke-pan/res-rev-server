@@ -14,7 +14,8 @@ class RatesControllerTest < ActionDispatch::IntegrationTest
     user = create :user
     token = Doorkeeper::AccessToken.create(resource_owner_id: user.id)
     assert_difference('Rate.count', 1) do
-      post restaurant_rates_path(@restaurant),
+      post(
+        restaurant_rates_path(@restaurant),
         params: {
           data: {
             type: 'rates',
@@ -23,8 +24,9 @@ class RatesControllerTest < ActionDispatch::IntegrationTest
               comment: 'good'
             }
           },
-          :access_token => token.token
+          access_token: token.token
         }
+      )
     end
     assert_response 201
   end
