@@ -21,6 +21,13 @@ end
   )
 end
 
+User.create(
+  name: 'John',
+  avatar: Faker::Avatar.image(name, '65x65'),
+  password: '1234qwer',
+  password_confirmation: '1234qwer'
+)
+
 100.times do
   Rate.create(
     score: 1 + rand(5),
