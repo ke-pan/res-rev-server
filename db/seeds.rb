@@ -23,7 +23,7 @@ end
 
 User.create(
   name: 'John',
-  avatar: Faker::Avatar.image(name, '65x65'),
+  avatar: Faker::Avatar.image('John', '65x65'),
   password: '1234qwer',
   password_confirmation: '1234qwer'
 )
